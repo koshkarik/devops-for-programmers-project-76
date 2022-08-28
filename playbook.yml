@@ -16,3 +16,18 @@
         restart_policy: always
         ports:
           - 80:3000
+    
+- name: Monitoring
+  hosts: webservers
+  roles:
+    - { role: datadog.datadog, become: yes }
+  vars:
+    datadog_api_key: "{{ DATADOG_API_KEY }}"
+    datadog_site: "datadoghq.eu"
+    datadog_checks:
+      http_check:
+        init_config:
+        instances:
+          - name: Application health check status
+            method: GET
+
