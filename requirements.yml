@@ -1,0 +1,7 @@
+---
+roles:
+  - name: datadog.datadog
+    version: 4.16.0
+collections:
+  - name: community.docker
+    version: 2.7.1
