@@ -1,15 +1,17 @@
 ---
 
 - hosts: all
-  gather_facts: no
+  gather_facts: true
 
   tasks:
-    - name: create env file
+    - name: Create env file
       template:
         src: templates/env.j2
         dest: /.env
+        mode: '0644'
 
-    - community.docker.docker_container:
+    - name: Start redmine docker image
+      community.docker.docker_container:
         name: redmine-example-app
         image: redmine:5.0.2
         env_file: /.env
@@ -20,7 +22,7 @@
 - name: Monitoring
   hosts: webservers
   roles:
-    - { role: datadog.datadog, become: yes }
+    - { role: datadog.datadog, become: true }
   vars:
     datadog_api_key: "{{ DATADOG_API_KEY }}"
     datadog_site: "datadoghq.eu"
@@ -30,4 +32,3 @@
         instances:
           - name: Application health check status
             method: GET
-
