@@ -14,6 +14,7 @@
 - Setup servers with `make prepare-servers`
 - Replace `vault.yml` and add variables.
 - Add env variables in `vars.yml`, `templates/env.j2`
+- To encrypt vault - `make encrypt`
 - Deploy `make deploy`
 
 
