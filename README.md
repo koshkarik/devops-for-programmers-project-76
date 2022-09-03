@@ -4,6 +4,7 @@
 
 ### Deployed app:
 [koshkarik.xyz](https://koshkarik.xyz)
+(Digitalocean - balancer leading to 2 servers + database service)
 
 ### Prerequisites:
 - Install Ansible
