@@ -6,8 +6,13 @@
 [koshkarik.xyz](https://koshkarik.xyz)
 
 ### Prerequisites:
-Install Ansible
-Install Make
-Get secret vault-password file and place it in repo root.
-Install dependencies with `make setup`
+- Install Ansible
+- Install Make
+- Create secret vault-password file and place it in repo root.
+- Install roles and collections with `make install`
+- Add server ips's in inventory.ini
+- Setup servers with `make prepare-servers`
+- Add env variables in `templates/env.j2`
+- Deploy `make deploy`
+
 
