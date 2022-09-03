@@ -25,8 +25,6 @@
   roles:
     - { role: datadog.datadog, become: true }
   vars:
-    datadog_api_key: "{{ DATADOG_API_KEY }}"
-    datadog_site: "datadoghq.eu"
     datadog_checks:
       http_check:
         init_config:
