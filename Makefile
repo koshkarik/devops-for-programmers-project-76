@@ -12,3 +12,6 @@ decrypt:
 
 deploy:
 	 ansible-playbook playbook.yml -i inventory.ini --vault-password-file vault-password
+
+view-vault:
+	ansible-vault view group_vars/webservers/vault.yml --vault-password-file vault-password

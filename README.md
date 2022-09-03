@@ -12,7 +12,8 @@
 - Install roles and collections with `make install`
 - Add server ips's in inventory.ini
 - Setup servers with `make prepare-servers`
-- Add env variables in `templates/env.j2`
+- Run `make decrypt` to decrypt vault
+- Add env variables in `vault.yml` , `vars.yml`, `templates/env.j2`
 - Deploy `make deploy`
 
 
