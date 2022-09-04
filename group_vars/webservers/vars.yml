@@ -1,7 +1,16 @@
-db_password: {{ DB_PASSWORD }}
-db_pg: {{ DB_POSTGRES }}
-db_username: {{ DB_USERNAME }}
-db_database: {{ DB_DATABASE }}
-db_port: {{ DB_PORT }}
-dd_api_key: {{ VAULT_DATADOG_API_KEY }}
-dd_site: {{ DATADOG_SITE }}
+app_port: "80"
+db_password: "{{ DB_PASSWORD }}"
+db_pg: "{{ DB_POSTGRES }}"
+db_username: "{{ DB_USERNAME }}"
+db_database: "{{ DB_DATABASE }}"
+db_port: "{{ DB_PORT }}"
+dd_api_key: "{{ VAULT_DATADOG_API_KEY }}"
+dd_site: "{{ DATADOG_SITE }}"
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: Application health check status
+        method: GET
+        timeout: 5
+        url: "http://localhost:{{ app_port }}"
